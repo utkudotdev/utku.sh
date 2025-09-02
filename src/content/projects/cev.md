@@ -1,7 +1,7 @@
 ---
 title: Cornell Electric Vehicles
 link: https://www.cornellelectricvehicles.org/
-order: 1
+order: 4
 ---
 
 I'm a member of the autonomy subteam of Cornell Electric Vehicles, where I work on autonomous algorithms for model- and full-scale electric cars. The team works on problems spanning the autonomy stack, from perception to planning and controls.

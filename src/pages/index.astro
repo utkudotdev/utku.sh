@@ -10,24 +10,37 @@ import Layout from "../layouts/Layout.astro";
         class="flex h-screen flex-col justify-start px-8 pt-32 sm:justify-center sm:px-12 sm:pt-0 xl:flex-row xl:px-16"
     >
         <div
-            class="xl:flex xl:flex-grow-[3] xl:basis-0 xl:flex-col xl:justify-center"
+            class="items-start xl:flex xl:flex-grow xl:basis-0 xl:flex-col xl:justify-center"
         >
             <IntroText>Hi! I'm Utku.</IntroText>
             <RollingDisplay />
         </div>
-        <div class="flex flex-col justify-center xl:flex-grow-[2] xl:basis-0">
+        <div
+            class="flex flex-col justify-center xl:flex-grow xl:basis-0 xl:items-end"
+        >
             <ul
-                class="xl list-disc px-6 pt-10 text-lg xl:h-min xl:px-0 xl:pt-8 xl:text-xl 2xl:text-xl"
+                class="list-disc px-6 pt-10 text-lg xl:h-min xl:pt-0 xl:text-xl 2xl:text-xl"
             >
-                <li class="pb-4 xl:pb-8">
-                    <Link text="See the software" to="/software" /> I've worked on
+                <li class="pb-4">
+                    I work on some open-source <Link
+                        text="projects"
+                        to="/projects"
+                    /> for fun
                 </li>
-                <li class="pb-4 xl:pb-8">
-                    Or, if that's not your thing, you can
-                    <Link text="view my films" to="/film" />
+                <li class="pb-4">
+                    I'm also involved in robotics <Link
+                        text="research"
+                        to="/research"
+                    /> at Cornell and externally
+                </li>
+                <li class="pb-4">
+                    I'm on the autonomy subteam of CEV, a <Link
+                        text="student group"
+                        to="/student-groups"
+                    /> on campus
                 </li>
                 <li>
-                    <Link text="My contact" to="/contact" /> is also available, if
+                    My <Link text="contact" to="/contact" /> is also available, if
                     you just want to get to me
                 </li>
             </ul>

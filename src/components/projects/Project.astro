@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import ProjectHeader from "./ProjectHeader.astro";
 
 interface Props {
-    entry: CollectionEntry<"software-personal" | "software-contrib">;
+    entry: CollectionEntry<"projects" | "research">;
 }
 
 const { entry } = Astro.props;
@@ -17,7 +17,7 @@ if (headings.length != 0) {
 <div>
     <ProjectHeader title={entry.data.title} link={entry.data.link} />
     <div
-        class="[&>p]:pb-2 md:[&>p]:max-w-[75ch] [&_a]:text-link hover:[&_a]:text-link-highlight text-lg"
+        class="text-lg [&>p]:pb-2 md:[&>p]:max-w-[75ch] [&_a]:text-link hover:[&_a]:text-link-highlight"
     >
         <Content />
     </div>

@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GithubMarkLight from "../images/GitHub-Mark-Light.png";
+import PageHeader from "../components/projects/PageHeader.astro";
+import { getCollection } from "astro:content";
+import Project from "../components/projects/Project.astro";
+
+const projects = await getCollection("projects");
+---
+
+<Layout title="Software">
+    <main class="px-8 pb-16 pt-24 sm:px-12">
+        <PageHeader
+            title="Software"
+            image={GithubMarkLight}
+            alt="GitHub logo"
+            link="https://github.com/utkudotdev"
+        />
+        <section>
+            {
+                projects
+                    .toSorted((a, b) => a.data.order - b.data.order)
+                    .map((project) => <Project entry={project} />)
+            }
+        </section>
+    </main>
+</Layout>

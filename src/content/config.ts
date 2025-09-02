@@ -1,35 +1,22 @@
 import { z, defineCollection } from "astro:content";
 
-const personalSoftwareCollection = defineCollection({
-    type: "content",
-    schema: z.object({
+const projectSchema =  z.object({
         title: z.string(),
         link: z.string().url().optional(),
         order: z.number(),
-    }),
+    })
+
+const projectsCollection = defineCollection({
+    type: "content",
+    schema: projectSchema,
 });
 
-const contribSoftwareCollection = defineCollection({
+const researchCollection = defineCollection({
     type: "content",
-    schema: z.object({
-        title: z.string(),
-        link: z.string().url().optional(),
-        order: z.number(),
-    }),
-});
-
-const filmCollection = defineCollection({
-    type: "content",
-    schema: z.object({
-        title: z.string(),
-        link: z.string().url(),
-        embed: z.string().url(),
-        order: z.number(),
-    }),
+    schema: projectSchema,
 });
 
 export const collections = {
-    "software-personal": personalSoftwareCollection,
-    "software-contrib": contribSoftwareCollection,
-    film: filmCollection,
+    "projects": projectsCollection,
+    research: researchCollection,
 };
