@@ -1,0 +1,24 @@
+---
+import { normalizePath } from "./normalizePath";
+
+interface Props {
+    name: string;
+    to: string;
+}
+
+const path = Astro.url.pathname;
+const { name, to } = Astro.props;
+const onPage = normalizePath(to) === normalizePath(path);
+---
+
+<a
+    class:list={[
+        "hover:text-link-highlight",
+        onPage
+            ? "text-dark-grey underline underline-offset-4"
+            : "text-light-grey",
+    ]}
+    href={to}
+>
+    <div class="h-fit">{name}</div>
+</a>

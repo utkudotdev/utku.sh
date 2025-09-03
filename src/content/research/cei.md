@@ -2,6 +2,9 @@
 title: Collective Embodied Intelligence Lab
 link: https://cei.ece.cornell.edu/
 order: 0
+short: hi
+image: ../images/cat.jpg
+imageAlt: hi
 ---
 
 I work on the Single-Actuator Wave (SAW) robot project at CEI. The core idea behind our robots is that they can use their wave-shaped bodies to modify terrain, including building mounds, digging holes, and burrowing. As the name suggests, each wave is driven by just a single motor using a central helix.

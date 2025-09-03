@@ -2,6 +2,9 @@
 title: computer-emulator (WIP)
 link: https://github.com/utkudotdev/computer-emulator
 order: 2
+short: hi
+image: ../images/cat.jpg
+imageAlt: hi
 ---
 
 `computer-emulator` is an emulator written in Rust for my custom 4-bit computer

@@ -1,10 +1,14 @@
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection, type ImageFunction } from "astro:content";
 
-const projectSchema =  z.object({
+const projectSchema = ({ image }: { image: ImageFunction }) =>
+    z.object({
         title: z.string(),
+        short: z.string(),
         link: z.string().url().optional(),
+        image: image(),
+        imageAlt: z.string(),
         order: z.number(),
-    })
+    });
 
 const projectsCollection = defineCollection({
     type: "content",
@@ -17,6 +21,6 @@ const researchCollection = defineCollection({
 });
 
 export const collections = {
-    "projects": projectsCollection,
+    projects: projectsCollection,
     research: researchCollection,
 };

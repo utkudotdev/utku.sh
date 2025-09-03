@@ -1,43 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import DesktopNavLink from "./DesktopNavLink.astro";
-import MobileNavLink from "./MobileNavLink.astro";
-import MenuIcon from "../../images/menu.svg";
+import NavLink from "./NavLink.astro";
 ---
 
-<nav class="fixed left-0 right-0 z-10 hidden h-18 w-full bg-dark-metal sm:flex">
-    <DesktopNavLink name="home" to="/" />
-    <DesktopNavLink name="projects" to="/projects" />
-    <DesktopNavLink name="research" to="/research" />
-    <DesktopNavLink name="contact" to="/contact" />
-</nav>
-
-<nav
-    class="fixed left-0 right-0 z-10 box-border h-18 w-full border-b-4 border-b-light-metal bg-dark-metal sm:hidden"
->
-    <Image
-        src={MenuIcon}
-        alt="Menu"
-        id="nav-mobile-icon"
-        class="h-18 w-18 p-5"
-    />
-</nav>
-
-<nav
-    id="nav-mobile-side"
-    class="animate-transform fixed left-0 right-0 top-18 z-10 h-screen w-fit -translate-x-full bg-dark-metal transition-transform duration-500 ease-in-out sm:hidden"
->
-    <MobileNavLink name="home" to="/" />
-    <MobileNavLink name="projects" to="/projects" />
-    <MobileNavLink name="research" to="/research" />
-    <MobileNavLink name="contact" to="/contact" />
-</nav>
-
-<script>
-    const navOpen = document.querySelector("#nav-mobile-icon")!;
-    navOpen.addEventListener("click", () => {
-        document
-            .querySelector("#nav-mobile-side")!
-            .classList.toggle("-translate-x-full");
-    });
-</script>
+<div>
+    <nav class="flex justify-around pb-3 text-lg">
+        <NavLink name="home" to="/" />
+        <NavLink name="projects" to="/projects" />
+        <NavLink name="research" to="/research" />
+    </nav>
+    <hr class="border-light-grey" />
+</div>

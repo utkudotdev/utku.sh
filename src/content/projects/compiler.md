@@ -2,6 +2,9 @@
 title: x86ISTMB
 link: https://github.com/ethanuppal/cs3110_compiler
 order: 1
+short: hi
+image: ../images/a.jpg
+imageAlt: hi
 ---
 
 I was a major contributor to my [CS 3110](https://www.cs.cornell.edu/courses/cs3110) group's

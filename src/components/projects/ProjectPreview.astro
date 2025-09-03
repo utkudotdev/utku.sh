@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    entry: CollectionEntry<"projects" | "research">;
+    class?: string;
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+---
+
+<!-- TODO: can we make this height automatic? -->
+<div class:list={["flex h-[6.5rem]", Astro.props.class]}>
+    <Image
+        src={entry.data.image}
+        alt={entry.data.imageAlt}
+        class="aspect-square h-full w-auto rounded-md object-cover"
+    />
+    <div class="pl-4">
+        <div class="flex justify-between">
+            <div>
+                <h2 class="text-lg font-semibold text-off-black">
+                    {entry.data.title}
+                </h2>
+                <div
+                    class="text-dark-grey [&>p]:line-clamp-3 [&>p]:overflow-hidden [&>p]:text-ellipsis [&_a]:text-link hover:[&_a]:text-link-highlight"
+                >
+                    <Content />
+                </div>
+            </div>
+            <div class="pl-3">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width={1.2}
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mt-1"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                    ></path><path d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"
+                    ></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>

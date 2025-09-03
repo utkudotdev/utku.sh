@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import ProjectPreview from "./ProjectPreview.astro";
+
+interface Props {
+    collection: "projects" | "research";
+    previewCount: number;
+}
+
+const { collection, previewCount } = Astro.props;
+
+const allProjects = await getCollection(collection);
+const topProjects = allProjects
+    .toSorted((a, b) => a.data.order - b.data.order)
+    .slice(0, previewCount);
+---
+
+{
+    topProjects.map((p, i) => {
+        const last = i == previewCount - 1;
+        if (last) {
+            return <ProjectPreview entry={p} class="mt-4" />;
+        } else {
+            return (
+                <>
+                    <ProjectPreview entry={p} class="my-4" />
+                    <hr class="border-light-grey" />
+                </>
+            );
+        }
+    })
+}

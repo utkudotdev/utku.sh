@@ -1,0 +1,61 @@
+<div class="inline-grid grid-cols-[1fr/1fr] font-medium" id="roll-container">
+    <span class="rollable rolled-in text-[#bd6879]">researcher.</span>
+    <span class="rollable hide text-[#7268ad]">engineer.</span>
+    <span class="rollable hide text-[#e3ad48]">programmer.</span>
+    <span class="rollable hide text-[#619ac5]">roboticist.</span>
+    <span class="rollable rolled-out text-[#43895f]">maker.</span>
+</div>
+
+<style>
+    .rollable {
+        display: inline-block;
+        transform-origin: 50% 50% -0.6em;
+        transition:
+            transform 0.5s ease-in-out,
+            opacity 0.5s ease-in-out;
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+    }
+
+    .rolled-out {
+        transform: perspective(500px) translateZ(-0.6em) rotateX(90deg);
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .rolled-in {
+        transform: perspective(500px) translateZ(-0.6em) rotateX(0deg);
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .hide {
+        transform: perspective(500px) translateZ(-0.6em) rotateX(-90deg);
+        opacity: 0;
+        transition: none;
+    }
+</style>
+
+<script>
+    const allWords = document.getElementById("roll-container")!.children;
+
+    let lastRolledOutIndex = allWords.length - 1; // last element
+
+    function next() {
+        const toHide = allWords.item(lastRolledOutIndex)!;
+        const toRollOut = allWords.item(
+            (lastRolledOutIndex + 1) % allWords.length,
+        )!;
+        const toRollIn = allWords.item(
+            (lastRolledOutIndex + 2) % allWords.length,
+        )!;
+
+        toHide.classList.replace("rolled-out", "hide");
+        toRollOut.classList.replace("rolled-in", "rolled-out");
+        toRollIn.classList.replace("hide", "rolled-in");
+
+        lastRolledOutIndex = (lastRolledOutIndex + 1) % allWords.length;
+    }
+
+    setInterval(next, 3000);
+</script>

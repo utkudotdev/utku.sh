@@ -6,13 +6,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                "off-white": "#f2f0ef",
-                "link-highlight-blue": "#557c99",
                 "link-highlight": "#997255",
                 link: "#557c99",
-                "light-metal": "#313131",
-                "dark-metal": "#292929",
-                "darker-metal": "#161616"
+                "off-black": "#161616",
+                "dark-grey": "#4A4A4A",
+                "light-grey": "#A6A6A6"
             },
             height: {
                 18: "4.5rem",
@@ -22,7 +20,7 @@ export default {
             },
         },
         fontFamily: {
-            sans: ["Cantarell", ...defaultTheme.fontFamily.sans],
+            sans: ["Lato", ...defaultTheme.fontFamily.sans],
             mono: ["Courier New", ...defaultTheme.fontFamily.mono],
         }
     },

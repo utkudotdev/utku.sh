@@ -1,49 +1,41 @@
 ---
-import IntroText from "../components/home/intro/IntroText.astro";
-import RollingDisplay from "../components/home/intro/RollingDisplay.astro";
-import Link from "../components/nav/Link.astro";
+import RollingDisplay from "../components/home/RollingDisplay.astro";
 import Layout from "../layouts/Layout.astro";
+import ProjectPreviewList from "../components/projects/ProjectPreviewList.astro";
 ---
 
-<Layout title="Home">
-    <main
-        class="flex h-screen flex-col justify-start px-8 pt-32 sm:justify-center sm:px-12 sm:pt-0 xl:flex-row xl:px-16"
-    >
-        <div
-            class="items-start xl:flex xl:flex-grow xl:basis-0 xl:flex-col xl:justify-center"
-        >
-            <IntroText>Hi! I'm Utku.</IntroText>
-            <RollingDisplay />
-        </div>
-        <div
-            class="flex flex-col justify-center xl:flex-grow xl:basis-0 xl:items-end"
-        >
-            <ul
-                class="list-disc px-6 pt-10 text-lg xl:h-min xl:pt-0 xl:text-xl 2xl:text-xl"
-            >
-                <li class="pb-4">
-                    I work on some open-source <Link
-                        text="projects"
-                        to="/projects"
-                    /> for fun
-                </li>
-                <li class="pb-4">
-                    I'm also involved in robotics <Link
-                        text="research"
-                        to="/research"
-                    /> at Cornell and externally
-                </li>
-                <li class="pb-4">
-                    I'm on the autonomy subteam of CEV, a <Link
-                        text="student group"
-                        to="/student-groups"
-                    /> on campus
-                </li>
-                <li>
-                    My <Link text="contact" to="/contact" /> is also available, if
-                    you just want to get to me
-                </li>
-            </ul>
-        </div>
+<Layout title="home">
+    <main class="w-full text-off-black">
+        <section class="pt-8">
+            <h1 class="text-2xl">Utku Melemetci, <RollingDisplay /></h1>
+            <p class="pt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                blandit est lacus, eget mollis tortor tincidunt a. Duis in
+                lectus est. Quisque condimentum dolor risus, ut aliquet lectus
+                placerat ut.
+            </p>
+            <p class="pt-4">
+                Aenean vel facilisis nisi. Mauris rutrum mollis eros vel
+                egestas. Ut pellentesque congue tristique. Quisque in mauris et
+                ipsum congue laoreet et id felis. Praesent facilisis posuere
+                quam, rhoncus placerat nisi cursus ut. Aenean ultrices hendrerit
+                sapien quis dignissim.
+            </p>
+            <p class="pt-4">
+                Ut cursus consectetur eleifend. Proin semper, lacus vitae
+                rhoncus vestibulum, enim arcu convallis nisi, in scelerisque
+                nibh dui ut magna. Integer ipsum quam, laoreet ac lorem vitae,
+                laoreet congue metus. Nullam vehicula purus nec sem lobortis, a
+                pharetra enim dignissim. Nam urna nulla, vestibulum non metus
+                consequat, sodales luctus nisi.
+            </p>
+        </section>
+        <section class="pt-8">
+            <h1 class="text-2xl">projects</h1>
+            <ProjectPreviewList collection="projects" previewCount={2} />
+        </section>
+        <section class="pt-8">
+            <h1 class="text-2xl">research</h1>
+        </section>
     </main>
 </Layout>
