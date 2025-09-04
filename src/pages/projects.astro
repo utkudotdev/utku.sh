@@ -1,0 +1,13 @@
+---
+import ProjectList from "../components/projects/ProjectList.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="project">
+    <main class="w-full text-off-black">
+        <section class="pt-8">
+            <h1 class="text-2xl">Projects</h1>
+            <ProjectList collection="projects" />
+        </section>
+    </main>
+</Layout>

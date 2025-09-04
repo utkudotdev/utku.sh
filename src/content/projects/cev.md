@@ -3,7 +3,7 @@ title: Cornell Electric Vehicles
 link: https://www.cornellelectricvehicles.org/
 order: 3
 short: hi
-image: ../images/cat.jpg
+image: ../images/a.jpg
 imageAlt: hi
 ---
 

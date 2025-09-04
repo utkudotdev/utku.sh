@@ -12,7 +12,8 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<!-- TODO: can we make this height automatic -->
+<!-- TODO: can we make this height automatic 
+     TODO: make projects link to right place -->
 <div
     class:list={[
         "flex h-[7.25rem] rounded-md p-2 transition-all hover:scale-[1.01] hover:cursor-pointer hover:shadow-md",
@@ -23,21 +24,23 @@ const { Content } = await entry.render();
     <Image
         src={entry.data.image}
         alt={entry.data.imageAlt}
-        class="aspect-square h-full w-auto rounded-md object-cover"
+        class="aspect-square h-full w-auto max-w-[20%] self-center rounded-md object-cover"
     />
     <div class="pl-4">
         <div class="flex justify-between">
             <div>
-                <h2 class="text-lg font-semibold text-off-black">
+                <h2
+                    class="line-clamp-1 overflow-hidden text-ellipsis text-lg font-semibold text-off-black"
+                >
                     {entry.data.title}
                 </h2>
                 <div
-                    class="text-dark-grey [&>p]:line-clamp-3 [&>p]:overflow-hidden [&>p]:text-ellipsis [&_a]:text-link hover:[&_a]:text-link-highlight"
+                    class="text-dark-grey [&>*:not(:first-child)]:hidden [&>p]:line-clamp-3 [&>p]:overflow-hidden [&>p]:text-ellipsis [&_a]:text-link hover:[&_a]:text-link-highlight"
                 >
                     <Content />
                 </div>
             </div>
-            <div class="pl-3">
+            <div class="pl-1 sm:pl-3">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}

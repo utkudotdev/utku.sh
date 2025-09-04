@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Project from "./Project.astro";
+
+interface Props {
+    collection: "projects" | "research";
+}
+
+const { collection } = Astro.props;
+
+const allProjects = await getCollection(collection);
+const topProjects = allProjects.toSorted((a, b) => a.data.order - b.data.order);
+---
+
+{
+    topProjects.map((p, i) => {
+        const last = i == topProjects.length - 1;
+        if (last) {
+            return <Project entry={p} class="mt-4" />;
+        } else {
+            return (
+                <>
+                    <Project entry={p} class="my-4" />
+                    <hr class="border-light-grey" />
+                </>
+            );
+        }
+    })
+}
