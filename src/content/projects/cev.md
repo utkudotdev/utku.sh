@@ -1,7 +1,7 @@
 ---
 title: Cornell Electric Vehicles
 link: https://www.cornellelectricvehicles.org/
-order: 2
+order: 3
 image: ../images/icp_result.png
 imageAlt: Point-to-point matching visualization for ICP. Blue points are matched to red points according to the green lines.
 ---
