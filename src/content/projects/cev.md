@@ -1,10 +1,9 @@
 ---
 title: Cornell Electric Vehicles
 link: https://www.cornellelectricvehicles.org/
-order: 3
-short: hi
-image: ../images/a.jpg
-imageAlt: hi
+order: 2
+image: ../images/icp_result.png
+imageAlt: Point-to-point matching visualization for ICP. Blue points are matched to red points according to the green lines.
 ---
 
 I'm a member of the autonomy subteam of Cornell Electric Vehicles, where I work on autonomous algorithms for model- and full-scale electric cars. The team works on problems spanning the autonomy stack, from perception to planning and controls.

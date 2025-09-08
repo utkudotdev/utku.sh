@@ -2,6 +2,7 @@
 import RollingDisplay from "../components/home/RollingDisplay.astro";
 import Layout from "../layouts/Layout.astro";
 import ProjectPreviewList from "../components/projects/ProjectPreviewList.astro";
+import Link from "../components/nav/Link.astro";
 ---
 
 <Layout title="home">
@@ -9,33 +10,59 @@ import ProjectPreviewList from "../components/projects/ProjectPreviewList.astro"
         <section class="pt-8">
             <h1 class="text-2xl">Utku Melemetci, <RollingDisplay /></h1>
             <p class="pt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                blandit est lacus, eget mollis tortor tincidunt a. Duis in
-                lectus est. Quisque condimentum dolor risus, ut aliquet lectus
-                placerat ut.
+                Hi! I'm Utku. I'm a 3rd year undergraduate CS student at Cornell
+                University. I'm interested in tackling challenging problems in
+                <strong class="font-semibold">
+                    robotics, embedded and low-level software, and computer
+                    vision.
+                </strong>
+                I am fundamentally curious and value learning; I enjoy working in
+                researchy environments where I have ample opportunity to obtain new
+                knowledge and experiment with new ideas.
             </p>
             <p class="pt-4">
-                Aenean vel facilisis nisi. Mauris rutrum mollis eros vel
-                egestas. Ut pellentesque congue tristique. Quisque in mauris et
-                ipsum congue laoreet et id felis. Praesent facilisis posuere
-                quam, rhoncus placerat nisi cursus ut. Aenean ultrices hendrerit
-                sapien quis dignissim.
+                As a researcher, I've had the pleasure of working with <Link
+                    to="https://www.engineering.cornell.edu/people/kirstin-hagelskjaer-petersen/"
+                    text="Dr. Kirstin Petersen"
+                /> at Cornell, <Link
+                    to="https://www.angeliquemtaylor.com/"
+                    text="Dr. Angelique Taylor"
+                /> at Cornell Tech, as well as <Link
+                    to="https://www.ll.mit.edu/r-d/engineering/control-and-autonomous-systems-engineering"
+                    text="Group 76"
+                /> at MIT Lincoln Labs. I'm also on the autonomy subteam of
+                <Link
+                    to="https://www.cornellelectricvehicles.org/"
+                    text="Cornell Electric Vehicles"
+                />, where I work on software that allows our model- and
+                full-scale electric vehicles to drive autonomously.
             </p>
             <p class="pt-4">
-                Ut cursus consectetur eleifend. Proin semper, lacus vitae
-                rhoncus vestibulum, enim arcu convallis nisi, in scelerisque
-                nibh dui ut magna. Integer ipsum quam, laoreet ac lorem vitae,
-                laoreet congue metus. Nullam vehicula purus nec sem lobortis, a
-                pharetra enim dignissim. Nam urna nulla, vestibulum non metus
-                consequat, sodales luctus nisi.
+                If you want to talk to me about anything at all, you can send me
+                an email at <code class="text-sm">contact@utku.sh</code>. You
+                can also connect with me on <Link
+                    to="https://www.linkedin.com/in/utku-melemetci/"
+                    text="LinkedIn"
+                />.
             </p>
-        </section>
-        <section class="pt-8">
-            <h1 class="text-2xl">projects</h1>
-            <ProjectPreviewList collection="projects" previewCount={3} />
-        </section>
-        <section class="pt-8">
-            <h1 class="text-2xl">research</h1>
+            <section class="pt-8">
+                <h1 class="text-2xl">projects</h1>
+                <ProjectPreviewList collection="projects" previewCount={2} />
+                <Link
+                    class="mt-2 block w-fit font-semibold"
+                    to="/projects"
+                    text="...more"
+                />
+            </section>
+            <section class="pt-8">
+                <h1 class="text-2xl">research</h1>
+                <ProjectPreviewList collection="research" previewCount={2} />
+                <Link
+                    class="mt-2 block w-fit font-semibold"
+                    to="/research"
+                    text="...more"
+                />
+            </section>
         </section>
     </main>
 </Layout>

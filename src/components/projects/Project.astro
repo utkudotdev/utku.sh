@@ -16,14 +16,16 @@ const { Content } = await entry.render();
     <h2 class="mb-2 text-lg font-semibold text-off-black">
         {entry.data.title}
     </h2>
-    <div
-        class="overflow-auto text-off-black [&_a]:text-link hover:[&_a]:text-link-highlight [&_p:not(:last-child)]:mb-4"
-    >
+    <div class="flex flex-col-reverse overflow-auto sm:block">
         <Image
             src={entry.data.image}
             alt={entry.data.imageAlt}
-            class="float-right mb-2 ml-2 h-auto max-w-[30%] rounded-md object-contain"
+            class="mx-auto mt-4 max-w-[75%] rounded-md object-contain sm:float-right sm:mb-4 sm:ml-4 sm:mt-0 sm:h-auto sm:max-w-[35%]"
         />
-        <Content />
+        <div
+            class="text-off-black [&_a]:text-link hover:[&_a]:text-link-highlight [&_p:not(:last-child)]:mb-4"
+        >
+            <Content />
+        </div>
     </div>
 </div>

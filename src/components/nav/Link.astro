@@ -2,9 +2,13 @@
 interface Props {
     text: string;
     to: string;
+    class?: string;
 }
 
 const { text, to } = Astro.props;
 ---
 
-<a class="text-link hover:text-link-highlight" href={to}>{text}</a>
+<a
+    class:list={["text-link hover:text-link-highlight", Astro.props.class]}
+    href={to}>{text}</a
+>

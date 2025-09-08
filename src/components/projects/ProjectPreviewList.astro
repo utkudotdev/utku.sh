@@ -17,7 +17,7 @@ const topProjects = allProjects
 
 {
     topProjects.map((p, i) => {
-        const last = i == previewCount - 1;
+        const last = i == topProjects.length - 1;
         if (last) {
             return <ProjectPreview entry={p} class="mt-4" />;
         } else {

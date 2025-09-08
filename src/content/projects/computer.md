@@ -1,14 +1,16 @@
 ---
-title: computer-emulator (WIP)
+title: computer-emulator
 link: https://github.com/utkudotdev/computer-emulator
-order: 2
-short: hi
-image: ../images/cat.jpg
-imageAlt: hi
+order: 3
+image: ../images/comp_asm.png
+imageAlt: Hello World in assembly for my emulator.
 ---
 
 `computer-emulator` is an emulator written in Rust for my custom 4-bit computer
-architecture. The architecture supports unsigned integer arithmetic, I/O,
-and memory pages. I'm also working on a custom assembler to make writing programs
-easier. I hope to one day build a working version in real-life or at least
-some kind of logic simulator.
+architecture. The architecture supports integer arithmetic, basic port-mapped I/O,
+a rather limited 256 nibbles of RAM, and up to 1KB of instruciton ROM. There is
+no stack, but subroutines can be called up to depth 1.
+
+The emulator also has a device system for hooking up virtual devices, like a console,
+though this system could use some work. There is also an incomplete assembler that
+can (at least) assemble [Hello World](https://github.com/utkudotdev/computer-emulator/blob/50d02da96227a5988a0f635caed1117f048a8453/programs/hello_world.asm).
