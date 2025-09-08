@@ -11,5 +11,4 @@ algorithm. The goal is to parallelize tree expansion to more effectively explore
 I may port the algorithm to an FPGA one day to learn more about accelerator design.
 
 Currently, there is only a CPU implementation available. A KD-tree is used for nearest-neighbor lookup,
-though I plan to add spatial hashing as an alternative as it may be more amenable to a GPU/FPGA
-implementation.
+though I am exploring alternatives that may be more amenable to a GPU/FPGA implementation.
