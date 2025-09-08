@@ -2,7 +2,7 @@
 title: Packing Robot
 order: 2
 image: ../images/packer.png
-imageAlt: hi
+imageAlt: An example run of the 3D pose registration algorithm.
 ---
 
 For my robot manipulation class, my group programmed a robot arm to pack items into boxes of various sizes efficiently. I was responsible for a lot of the code outside of the main algorithm. For example, I built a 3D object pose registration system that uses [Fast Global Registration](https://doi.org/10.1007/978-3-319-46475-6_47) and [Iterative Closest Point](https://en.wikipedia.org/wiki/Iterative_closest_point) to match CAD models of objects to objects found in the scene. To improve results, I added an active perception system where the robot would look at the scene from multiple angles and combine the point clouds before attempting to match objects.

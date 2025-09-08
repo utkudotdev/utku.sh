@@ -1,7 +1,7 @@
 ---
 title: computer-emulator
 link: https://github.com/utkudotdev/computer-emulator
-order: 3
+order: 4
 image: ../images/comp_asm.png
 imageAlt: Hello World in assembly for my emulator.
 ---
